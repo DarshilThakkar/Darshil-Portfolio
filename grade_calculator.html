@@ -243,7 +243,10 @@ document.getElementById('gradeForm').addEventListener('submit', function(event) 
   const grades = [];
   for (let i = 9; i >= 4; i--) {
     const marksRequired = ((i * 10) - totalMarks) / 0.4;
-    if(marksRequired < 40) marksRequired = 40;
+    if(marksRequired < 40)
+    {
+        marksRequired = 40;
+    }
     if(marksRequired > 100)
     {
         
