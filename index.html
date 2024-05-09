@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darshil Thakkar</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"></script>
+    <!-- Your custom CSS -->
+    <style>
+      body {
+        padding-top: 70px; /* Adjusted for fixed navbar height */
+      }
+    </style>
+    <script>
+      function scrollToElement(elementId) {
+        var element = document.getElementById(elementId);
+        var offsetTop = element.offsetTop - 70; // Adjusted for navbar height
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <h3>Darshil Thakkar</h3>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="scrollToElement('education')"
+                >Education</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="scrollToElement('experience')"
+                >Experience</a
+              >
+            </li>
+            <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="javascript:void(0);"
+                  onclick="scrollToElement('profiles')"
+                  >Profiles</a
+                >
+              </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="scrollToElement('projects')"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="scrollToElement('skills')"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="scrollToElement('achievements')"
+                >Achievements</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="scrollToElement('interests')"
+                >Interests</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Education Section -->
+        <div class="col-md-6" id="education">
+          <section>
+            <h2>Education</h2>
+            <p class="lead">Institute of Technology, Nirma University</p>
+            <p class="lead">Bachelor of Technology in Computer Science</p>
+            <p class="lead">Ahmedabad, Gujarat</p>
+            <p class="lead">June 2022 – May 2026</p>
+          </section>
+        </div>
+        <!-- Picture Section -->
+        <div class="col-md-6 text-center">
+            <br><br><br>
+            <img src="Profile_Photo.jpeg" class="img-fluid rounded-circle neon-border" alt="Your Picture" style="width: 200px">
+          </div>          
+      </div>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <h2>Experience</h2>
+        <p class="lead">CodeAdda Programming Club, Nirma University</p>
+        <p class="lead">Position : Club Director</p>
+        <p class="lead">November 2023 – Present</p>
+        <ul class="lead">
+          <li>
+            Organised various contests, tested contests written by other fellow
+            club directors as well as board members.
+          </li>
+          <li>
+            Guided juniors about competitive programming and mentored them in
+            Data Structures and Algorithms topics.
+          </li>
+        </ul>
+      </section>
+
+      <section id="profiles">
+        <h2>Profiles</h2>
+        <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="codeforces.png" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                  <h5 class="card-title">Codeforces</h5>
+                  <p class="card-text">Handle : Lihs_RAD</p>
+                  <p class="card-text">Max-Rating : 1517 (Specialist)</p>
+                  <a href="https://codeforces.com/profile/Lihs_RAD" class="btn custom-btn-color">Visit Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="leetcode.png" class="card-img-top" alt="Image 2">
+                <div class="card-body">
+                  <h5 class="card-title">Leetcode</h5>
+                  <p class="card-text">Handle : Darshil_Thakkar</p>
+                  <p class="card-text">Max-Rating : 1827</p>
+                  <a href="https://leetcode.com/u/Darshil_Thakkar/" class="btn custom-btn-color">Visit Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="codechef.jpeg" class="card-img-top" alt="Image 3">
+                <div class="card-body">
+                  <h5 class="card-title">CodeChef</h5>
+                  <p class="card-text">Handle : doraemon_2510</p>
+                  <p class="card-text">Max-Rating : 1727 (3-Star)</p>
+                  <a href="https://www.codechef.com/users/doraemon_2510" class="btn custom-btn-color">Visit Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </section>
+
+      <!-- Projects Section -->
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">SimStocks</h5>
+            <p class="card-text">
+              SimStocks is a web application designed to simulate real-world
+              stock market trading environments for educational purposes without
+              the associated financial risks.
+            </p>
+            <p class="card-text">
+              <strong>Tech Stack:</strong> NodeJS, WebSockets, finnHub.io and
+              polygon.io Market APIs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Add more project cards here -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">PostIt</h5>
+            <p class="card-text">
+              PostIt is a robust web application designed to empower users to
+              share their thoughts, ideas, and insights through articles while
+              ensuring secure authentication and content management.
+            </p>
+            <p class="card-text">
+              <strong>Tech Stack:</strong> Django, Python, HTML, CSS.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">WebWhisper</h5>
+            <p class="card-text">
+              WebWhisper is a real-time chat application that boasts an
+              appealing user interface design and prioritizes user-friendliness
+              for seamless communication experiences.
+            </p>
+            <p class="card-text">
+              <strong>Tech Stack:</strong> Spring Boot, Java, WebSockets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <p class="lead">
+          Languages: C++, C, Java, Javascript, PHP, Python, HTML/CSS,
+          JavaScript, SQL
+        </p>
+        <p class="lead">
+          Technologies/Frameworks: Spring Boot, Django, React, Node.js, Next.js,
+          Typescript, GitHub
+        </p>
+        <p class="lead">
+          Other Skills: Data Structures, Algorithms, Object Oriented
+          Programming, Database Management, Operating Systems, MongoDB,
+          Competitive Programming, Mathematics, Leadership
+        </p>
+      </section>
+
+      <!-- Achievements Section -->
+      <section id="achievements">
+        <h2>Achievements</h2>
+        <ul class="lead">
+          <li>
+            Secured 2nd place in the EdTech track sponsored by Crest Data
+            Systems and clinched 2nd position overall at HackNUthon 5.0 outof
+            200+ teams and 800+ Participants, organized by the Computer Society
+            of India.
+          </li>
+          <li>
+            Secured 1st rank in India and Global Rank 4th in CodeChef Starters
+            110 out of 20K+ Participants.
+          </li>
+          <li>
+            Qualified for the 2nd round of Meta HackerCup and Penultimate round
+            for TCS CodeVita 2024.
+          </li>
+          <li>
+            Knight on Leetcode with 500+ total Structures Problems Solved.
+          </li>
+          <li>
+            565th and 650th Global Rank out of 30K+ Participants out of 30K+
+            Participants in Codeforces Round 889 and 935.
+          </li>
+          <li>
+            985th Global Rank out of 10K+ Participants in Google KickStart by
+            solving all problems.
+          </li>
+          <li>
+            Solved 1500+ DSA Problems of various difficulties in Codeforces,
+            Leetcode, Codechef, Atcoder and Hackerrank.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Interests Section -->
+      <section id="interests">
+        <h2>Interests</h2>
+        <ul class="lead">
+          <li>Problem Solving</li>
+          <li>Web Development</li>
+          <li>Stock Market</li>
+          <li>Table-Tennis</li>
+          <li>Finance</li>
+          <li>Software Development</li>
+        </ul>
+      </section>
+    
+
+    <section id="social">
+        <center><h2>Social Media Profiles</h2></center><br>
+        <center>
+        <div class="social-media">
+            <a href="https://www.instagram.com/darshil_2510_/" class="btn custom-btn-color"><i class="fab fa-instagram"></i> Instagram</a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/darshilthakkar/" class="btn custom-btn-color"><i class="fab fa-linkedin"></i> LinkedIn</a>&nbsp;&nbsp;
+            <a href="https://twitter.com/Darshil_2510" class="btn custom-btn-color"><i class="fab fa-twitter"></i> Twitter</a>
+          </div></center>
+        </section>
+    </div>
+    <!-- Comments Section -->
+    <section id="comments" class="bg-dark text-white py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Leave a Comment</h2>
+        <form id="commentForm">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="comment"
+              rows="3"
+              placeholder="Your Comment"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="container mt-5">
+        <section>
+            <h2>Comments:</h2>
+            <div id="commentsList"></div>
+         </section>
+        </div>
+    <!-- Footer -->
+    <footer>
+      <center><p>&copy; 2024 Darshil Thakkar</p></center>
+    </footer>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        get,
+        child,
+      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBEJYbdU8cAUTriZG_1kwj7MPAAcziCXtM",
+        authDomain: "darshil-127fd.firebaseapp.com",
+        projectId: "darshil-127fd",
+        storageBucket: "darshil-127fd.appspot.com",
+        messagingSenderId: "217068281988",
+        appId: "1:217068281988:web:3bc3e666cde298cdc9e2d1",
+        measurementId: "G-J793ZWNFLX",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // Initialize Realtime Database
+      const db = getDatabase();
+
+      // Function to handle form submission
+      document
+        .getElementById("commentForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Get user input
+          var name = document.getElementById("name").value;
+          var comment = document.getElementById("comment").value;
+
+          try {
+            // Add comment to Realtime Database
+            await set(ref(db, "comments/" + Date.now()), {
+              name: name,
+              comment: comment,
+            });
+
+            console.log("Comment added successfully");
+
+            // Clear form fields
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
+
+            // Display comments again after adding new comment
+            displayComments();
+          } catch (error) {
+            console.error("Error adding comment: ", error);
+          }
+        });
+
+      // Function to display comments from Realtime Database
+      async function displayComments() {
+        var commentsList = document.getElementById("commentsList");
+
+        try {
+          // Get comments from Realtime Database
+          const snapshot = await get(child(ref(db), "comments"));
+          if (snapshot.exists()) {
+            commentsList.innerHTML = ""; // Clear existing comments
+            const comments = []; // Array to store comments
+
+            // Iterate through each comment and push it to the comments array
+            snapshot.forEach((childSnapshot) => {
+              comments.push(childSnapshot.val());
+            });
+
+            // Reverse the comments array to display the latest comments first
+            comments.reverse();
+
+            // Iterate through the reversed comments array to create HTML elements
+            comments.forEach((commentData) => {
+              var commentElement = document.createElement("div");
+              commentElement.innerHTML = `<div class="card h-100">
+            <div class="card-body">
+              <p class="card-text">${commentData.comment}</p>
+              <p class="card-text">~ ${commentData.name}</p>
+            </div>
+          </div>`;
+              commentsList.appendChild(commentElement);
+            });
+          } else {
+            console.log("No comments found");
+          }
+        } catch (error) {
+          console.error("Error getting comments: ", error);
+        }
+      }
+
+      // Call function to display comments when the page loads
+      displayComments();
+    </script>
+    <!-- JavaScript dependencies (jQuery, Popper.js, Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

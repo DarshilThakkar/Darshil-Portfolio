@@ -1,0 +1,161 @@
+body {
+    padding-top: 70px; /* Adjusted for fixed navbar height */
+    background-color: #09090b;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .navbar {
+    background-color: #61dafb !important;
+  }
+  
+  .navbar h3 {
+    color: #09090b;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #09090b !important;
+    font-weight: bold;
+  }
+  
+  .navbar-brand:hover,
+  .navbar-nav .nav-link:hover {
+    font-size: 1.05em;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  section h2 {
+    color: #61dafb;
+  }
+  
+  section p,
+  section ul {
+    color: #eaecef;
+  }
+  
+  .card {
+    background-color: #24292e;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border: 1px solid #61dafb;
+  }
+  
+  .card-title {
+    color: #61dafb;
+  }
+  
+  footer {
+    background-color: #61dafb; /* Change this to the color you desire */
+    color: #09090b !important;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Comment Section Styles */
+  #comments {
+    background-color: #09090b;
+    padding: 50px 0;
+  }
+  #comments h2 {
+    color: #61dafb;
+    margin-bottom: 30px;
+  }
+  #comments .form-group {
+    margin-bottom: 20px;
+  }
+  #comments .form-control {
+    background-color: #09090b;
+    color: #ffffff;
+    border: 1px solid #61dafb;
+  }
+  #comments .form-control:focus {
+    border-color: #4fa3d1;
+    background-color: #1c1f23;
+    color: #ffffff;
+  }
+  #comments .btn-primary {
+    color: #09090b;
+    font-weight: bold;
+    background-color: #61dafb;
+    border-color: #61dafb;
+    transition: all 0.3s ease;
+  }
+  #comments .btn-primary:hover {
+    background-color: #4fa3d1;
+    border-color: #4fa3d1;
+  }
+  #commentsList .comment {
+    border-bottom: 1px solid #616161;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  #commentsList .comment:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  /* Custom CSS for comment cards */
+  .comment-card {
+      background-color: #333;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .comment-card h5 {
+      color: #61dafb;
+    }
+    
+    .comment-card p {
+      color: #fff;
+      margin-bottom: 0;
+    }
+  
+    .neon-border {
+      border-radius: 50%; /* Ensure the image has a circular shape */
+      animation: neon-animation 1s infinite alternate; /* Neon animation */
+    }
+    
+    @keyframes neon-animation {
+      0% {
+        box-shadow: 0 0 10px #61dafb, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #61dafb, 0 0 70px #61dafb, 0 0 80px #61dafb, 0 0 100px #61dafb, 0 0 150px #61dafb;
+      }
+      100% {
+        box-shadow: 0 0 25px #61dafb, 0 0 35px #fff, 0 0 45px #fff, 0 0 55px #61dafb, 0 0 85px #61dafb, 0 0 95px #61dafb, 0 0 125px #61dafb, 0 0 185px #61dafb;
+      }
+    }
+    .custom-btn-color {
+      background-color: #61dafb; /* Set the background color */
+      border-color: #61dafb; /* Set the border color */
+      color: #09090b; /* Set the text color */
+    }
+    
+    .custom-btn-color:hover {
+      background-color: #5cb8d6; /* Change the background color on hover */
+      border-color: #5cb8d6; /* Change the border color on hover */
+    }
+    
+    
+    .custom-card {
+      transition: all 0.3s ease; /* Add transition effect */
+    }
+    
+    .custom-card:hover {
+      transform: scale(1.05); /* Increase size on hover */
+    }
+    
+    .custom-img {
+      width: 200px; /* Initial width of image */
+      height: auto; /* Maintain aspect ratio */
+      transition: all 0.3s ease; /* Add transition effect */
+    }
+    
+    .custom-card:hover .custom-img {
+      width: 250px; /* Increase width on hover */
+    }
+    
