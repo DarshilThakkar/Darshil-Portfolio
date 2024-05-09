@@ -199,8 +199,19 @@
   const practicalMarks = parseFloat(document.getElementById('practical').value);
   const endSemMarks = parseFloat(document.getElementById('endSem').value);
 
-  var totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks) + (0.4 * endSemMarks);
+  var totalMarks = 0;
+
+  if(lpwMarks == NaN && practicalMarks == NaN)
+  {
+    totalMarks = (0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks) + (0.4 * endSemMarks);
     totalMarks = totalMarks.toFixed(2);
+  }
+  else
+  {
+    totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks) + (0.4 * endSemMarks);
+    totalMarks = totalMarks.toFixed(2);
+  }
+
   let grade = '';
   if (totalMarks > 90) {
     grade = '10';
@@ -238,7 +249,15 @@ document.getElementById('gradeForm2').addEventListener('submit', function(event)
   const practicalMarks = parseFloat(document.getElementById('practical2').value);
 
   // Calculate total marks
-  const totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks);
+  var totalMarks = 0;
+  if(lpwMarks == NaN && practicalMarks == NaN)
+  {
+    totalMarks = (0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks);
+  }
+  else
+  {
+    totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks);
+  }
 
   // Calculate marks required for each grade
   const grades = [];
