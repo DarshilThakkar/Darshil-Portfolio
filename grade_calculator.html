@@ -58,33 +58,33 @@
                 <div class="col-md-4">
                     <div class="form-group">
                       <label for="classTest">Class Test Marks:</label>
-                      <input type="number" class="form-control" id="classTest2" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="classTest2" placeholder="Enter marks out of 20">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="sessional">Sessional Examination Marks:</label>
-                      <input type="number" class="form-control" id="sessional2" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="sessional2" placeholder="Enter marks out of 50">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="assignment">Assignment Marks:</label>
-                      <input type="number" class="form-control" id="assignment2" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="assignment2" placeholder="Enter marks out of 50">
                     </div>
                   </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                      <label for="lpw">LPW Marks:</label>
-                      <input type="number" class="form-control" id="lpw2" placeholder="Enter marks">
+                      <label for="lpw">LPW Marks (If Applicable):</label>
+                      <input type="number" class="form-control" id="lpw2" placeholder="Enter marks out of 40">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="practical">Practical Marks:</label>
-                      <input type="number" class="form-control" id="practical2" placeholder="Enter marks">
+                      <label for="practical">Practical Marks (If Applicable):</label>
+                      <input type="number" class="form-control" id="practical2" placeholder="Enter mark out of 100s">
                     </div>
                   </div>
               </div>
@@ -105,33 +105,33 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="classTest">Class Test Marks:</label>
-                <input type="number" class="form-control" id="classTest" placeholder="Enter marks">
+                <input type="number" class="form-control" id="classTest" placeholder="Enter marks out of 20">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="sessional">Sessional Examination Marks:</label>
-                <input type="number" class="form-control" id="sessional" placeholder="Enter marks">
+                <input type="number" class="form-control" id="sessional" placeholder="Enter mark out of 50">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label for="assignment">Assignment Marks:</label>
-                <input type="number" class="form-control" id="assignment" placeholder="Enter marks">
+                <input type="number" class="form-control" id="assignment" placeholder="Enter marks out of 50">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="lpw">LPW Marks:</label>
-                <input type="number" class="form-control" id="lpw" placeholder="Enter marks">
+                <label for="lpw">LPW Marks (If Applicable):</label>
+                <input type="number" class="form-control" id="lpw" placeholder="Enter marks out of 40">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="practical">Practical Marks:</label>
-                <input type="number" class="form-control" id="practical" placeholder="Enter marks">
+                <label for="practical">Practical Marks (If Applicable):</label>
+                <input type="number" class="form-control" id="practical" placeholder="Enter marks out of 100">
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="endSem">End Semester Marks:</label>
-                <input type="number" class="form-control" id="endSem" placeholder="Enter marks">
+                <input type="number" class="form-control" id="endSem" placeholder="Enter marks out of 100">
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
 
   var totalMarks = 0;
 
-  if(lpwMarks == NaN && practicalMarks == NaN)
+  if(isNaN(lpwMarks) && isNaN(practicalMarks))
   {
     totalMarks = (0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks) + (0.4 * endSemMarks);
     totalMarks = totalMarks.toFixed(2);
@@ -250,7 +250,7 @@ document.getElementById('gradeForm2').addEventListener('submit', function(event)
 
   // Calculate total marks
   var totalMarks = 0;
-  if(lpwMarks == NaN && practicalMarks == NaN)
+  if(isNaN(lpwMarks) && isNaN(practicalMarks))
   {
     totalMarks = (0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks);
   }
