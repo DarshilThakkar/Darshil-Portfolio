@@ -216,5 +216,13 @@ body {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-    
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+.blink-animation {
+  animation: blink 1s infinite;
+}
     

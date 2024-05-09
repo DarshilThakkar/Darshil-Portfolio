@@ -103,16 +103,16 @@
                 >Interests</a
               >
             </li>
-
-            <div class="container">
-              <button id="gradeCalculatorBtn" class="btn btn-primary">Open Grade Analytics</button>
-            </div>
             
           </ul>
         </div>
       </div>
     </nav>
-
+<br>
+    <div class="container"><center>
+      <button id="gradeCalculatorBtn" class="btn custom-btn-color">Try Grade Analytics Feature</button></center>
+    </div><br>
+    <br>
     <!-- Main Content -->
     <div class="container mt-5">
       <div class="row">
@@ -463,6 +463,8 @@
     window.location.href = "grade_calculator.html"; // Replace with the URL of your grade calculator page
   }
 });
+document.getElementById('gradeCalculatorBtn').classList.add('blink-animation');
+
 
     </script>
     <!-- JavaScript dependencies (jQuery, Popper.js, Bootstrap JS) -->
