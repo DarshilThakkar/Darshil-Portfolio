@@ -264,7 +264,7 @@ document.getElementById('gradeForm2').addEventListener('submit', function(event)
   // Calculate marks required for each grade
   const grades = [];
   for (let i = 9; i >= 4; i--) {
-    var marksRequired = ((i * 10) - totalMarks) / 0.4;
+    var marksRequired = ((i * 10) - totalMarks + 1) / 0.4;
     marksRequired = Math.ceil(marksRequired);
     if(marksRequired < 40)
     {
