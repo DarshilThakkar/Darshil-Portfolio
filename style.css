@@ -158,4 +158,63 @@ body {
     .custom-card:hover .custom-img {
       width: 250px; /* Increase width on hover */
     }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    #result {
+      margin-top: 20px;
+    }
+
+    /* Add custom styles for the table */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #5cb8d6;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+  background-color: #fff;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+    
     
