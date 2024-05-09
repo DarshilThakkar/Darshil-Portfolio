@@ -207,13 +207,11 @@
 
   if(isNaN(lpwMarks) && isNaN(practicalMarks))
   {
-    totalMarks = (0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks) + (0.4 * endSemMarks);
-    totalMarks = totalMarks.toFixed(2);
+    totalMarks = Math.ceil((0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks)) + Math.ceil((0.4 * endSemMarks));
   }
   else
   {
-    totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks) + (0.4 * endSemMarks);
-    totalMarks = totalMarks.toFixed(2);
+    totalMarks = Math.ceil((0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks)) + Math.ceil((0.3 * lpwMarks) + (0.18 * practicalMarks)) + Math.ceil(0.4 * endSemMarks);
   }
 
   let grade = '';
@@ -256,17 +254,18 @@ document.getElementById('gradeForm2').addEventListener('submit', function(event)
   var totalMarks = 0;
   if(isNaN(lpwMarks) && isNaN(practicalMarks))
   {
-    totalMarks = (0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks);
+    totalMarks = Math.ceil((0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks));
   }
   else
   {
-    totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks);
+    totalMarks = Math.ceil((0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks)) + Math.ceil((0.3 * lpwMarks) + (0.18 * practicalMarks));
   }
 
   // Calculate marks required for each grade
   const grades = [];
   for (let i = 9; i >= 4; i--) {
     var marksRequired = ((i * 10) - totalMarks) / 0.4;
+    marksRequired = Math.ceil(marksRequired);
     if(marksRequired < 40)
     {
         marksRequired = 40;
@@ -277,7 +276,7 @@ document.getElementById('gradeForm2').addEventListener('submit', function(event)
     }
     else
     {
-        grades.push({ grade: i + 1, marksRequired: marksRequired.toFixed(2) });
+        grades.push({ grade: i + 1, marksRequired: marksRequired });
     }
   }
 
