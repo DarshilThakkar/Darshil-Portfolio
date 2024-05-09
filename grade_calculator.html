@@ -53,24 +53,24 @@
     <section>
         <div class="container"><br>
             <h2>Grade Analytics</h2><br>
-            <form id="gradeForm">
+            <form id="gradeForm2">
               <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                       <label for="classTest">Class Test Marks:</label>
-                      <input type="number" class="form-control" id="classTest" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="classTest2" placeholder="Enter marks">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="sessional">Sessional Examination Marks:</label>
-                      <input type="number" class="form-control" id="sessional" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="sessional2" placeholder="Enter marks">
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="assignment">Assignment Marks:</label>
-                      <input type="number" class="form-control" id="assignment" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="assignment2" placeholder="Enter marks">
                     </div>
                   </div>
               </div>
@@ -78,13 +78,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                       <label for="lpw">LPW Marks:</label>
-                      <input type="number" class="form-control" id="lpw" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="lpw2" placeholder="Enter marks">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="practical">Practical Marks:</label>
-                      <input type="number" class="form-control" id="practical" placeholder="Enter marks">
+                      <input type="number" class="form-control" id="practical2" placeholder="Enter marks">
                     </div>
                   </div>
               </div>
@@ -199,8 +199,8 @@
   const practicalMarks = parseFloat(document.getElementById('practical').value);
   const endSemMarks = parseFloat(document.getElementById('endSem').value);
 
-  const totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks) + (0.4 * endSemMarks);
-
+  var totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks) + (0.4 * endSemMarks);
+    totalMarks = totalMarks.toFixed(2);
   let grade = '';
   if (totalMarks > 90) {
     grade = '10';
@@ -219,6 +219,7 @@
   else {
     grade = 'FAIL';
   }
+  console.log(classTestMarks);
   console.log(totalMarks);
   console.log(grade);
   document.getElementById('result').innerHTML = `<p>Total Marks: ${totalMarks}</p><p>Grade: ${grade}</p>`;
@@ -226,15 +227,15 @@
 
 
 
-document.getElementById('gradeForm').addEventListener('submit', function(event) {
+document.getElementById('gradeForm2').addEventListener('submit', function(event) {
   event.preventDefault();
 
   // Get input values
-  const classTestMarks = parseFloat(document.getElementById('classTest').value);
-  const sessionalMarks = parseFloat(document.getElementById('sessional').value);
-  const assignmentMarks = parseFloat(document.getElementById('assignment').value);
-  const lpwMarks = parseFloat(document.getElementById('lpw').value);
-  const practicalMarks = parseFloat(document.getElementById('practical').value);
+  const classTestMarks = parseFloat(document.getElementById('classTest2').value);
+  const sessionalMarks = parseFloat(document.getElementById('sessional2').value);
+  const assignmentMarks = parseFloat(document.getElementById('assignment2').value);
+  const lpwMarks = parseFloat(document.getElementById('lpw2').value);
+  const practicalMarks = parseFloat(document.getElementById('practical2').value);
 
   // Calculate total marks
   const totalMarks = (0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks) + (0.3 * lpwMarks) + (0.18 * practicalMarks);
