@@ -1,417 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Darshil Thakkar</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"></script>
-    <!-- Your custom CSS -->
-    <style>
-      body {
-        padding-top: 70px; /* Adjusted for fixed navbar height */
-      }
-    </style>
-    <script>
-      function scrollToElement(elementId) {
-        var element = document.getElementById(elementId);
-        var offsetTop = element.offsetTop - 70; // Adjusted for navbar height
-        window.scrollTo({ top: offsetTop, behavior: "smooth" });
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container"><a href="index.html">
-        <h3>Darshil Thakkar</h3></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-      </button>
-            
-        </div>
-      </div>
-    </nav>
-
-    <div class="container"><center><a href="index.html">
-        <button class="btn custom-btn-color">Back to Home</button></a></center>
-      </div>
-
-    <section>
-        <div class="container"><br>
-            <h2>Grade Analytics</h2><br>
-            <form id="gradeForm2">
-              <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="classTest">Class Test Marks:</label>
-                      <input type="number" class="form-control" id="classTest2" placeholder="Enter marks out of 20">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="sessional">Sessional Examination Marks:</label>
-                      <input type="number" class="form-control" id="sessional2" placeholder="Enter marks out of 50">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="assignment">Assignment Marks:</label>
-                      <input type="number" class="form-control" id="assignment2" placeholder="Enter marks out of 50">
-                    </div>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="lpw">LPW Marks (If Applicable):</label>
-                      <input type="number" class="form-control" id="lpw2" placeholder="Enter marks out of 40">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="practical">Practical Marks (If Applicable):</label>
-                      <input type="number" class="form-control" id="practical2" placeholder="Enter mark out of 100">
-                    </div>
-                  </div>
-              </div>
-              <button type="submit" class="btn custom-btn-color">Calculate</button>
-            </form><br><br>
-            <!-- Analytics table -->
-            <div id="analytics"></div>
-          </div>
-          
-    </section>
-
-    <!-- Main Content -->
-   <section>
-    <div class="container"><br>
-        <h2>Grade Calculator</h2><br>
-        <form id="gradeForm">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="classTest">Class Test Marks:</label>
-                <input type="number" class="form-control" id="classTest" placeholder="Enter marks out of 20">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="sessional">Sessional Examination Marks:</label>
-                <input type="number" class="form-control" id="sessional" placeholder="Enter mark out of 50">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="assignment">Assignment Marks:</label>
-                <input type="number" class="form-control" id="assignment" placeholder="Enter marks out of 50">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="lpw">LPW Marks (If Applicable):</label>
-                <input type="number" class="form-control" id="lpw" placeholder="Enter marks out of 40">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="practical">Practical Marks (If Applicable):</label>
-                <input type="number" class="form-control" id="practical" placeholder="Enter marks out of 100">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="endSem">End Semester Marks:</label>
-                <input type="number" class="form-control" id="endSem" placeholder="Enter marks out of 100">
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn custom-btn-color">Calculate</button>
-        </form><br><br>
-        <div id="result"></div>
-      </div>
-    </section>
-    
-    <!-- Comments Section -->
-    <section id="comments" class="bg-dark text-white py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Leave a Comment</h2>
-        <form id="commentForm">
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-control"
-              id="comment"
-              rows="3"
-              placeholder="Your Comment"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Post Comment</button>
-        </form>
-      </div>
-    </section>
-
-    <div class="container mt-5">
-        <section>
-            <h2>Comments:</h2>
-            <div id="commentsList"></div>
-         </section>
-        </div>
-    <!-- Footer -->
-    <footer>
-      <center><p>&copy; 2024 Darshil Thakkar</p></center>
-    </footer>
-
-    <script>
-        document.getElementById('gradeForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const classTestMarks = parseFloat(document.getElementById('classTest').value);
-  const sessionalMarks = parseFloat(document.getElementById('sessional').value);
-  const assignmentMarks = parseFloat(document.getElementById('assignment').value);
-  const lpwMarks = parseFloat(document.getElementById('lpw').value);
-  const practicalMarks = parseFloat(document.getElementById('practical').value);
-  const endSemMarks = parseFloat(document.getElementById('endSem').value);
-
-  var totalMarks = 0;
-
-  if(isNaN(lpwMarks) && isNaN(practicalMarks))
-  {
-    totalMarks = Math.ceil((0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks)) + Math.ceil((0.4 * endSemMarks));
-  }
-  else
-  {
-    totalMarks = Math.ceil((0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks)) + Math.ceil((0.3 * lpwMarks) + (0.18 * practicalMarks)) + Math.ceil(0.4 * endSemMarks);
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attractive Dialogue Box</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
   }
 
-  let grade = '';
-  if (totalMarks > 90) {
-    grade = '10';
-  } else if (totalMarks > 80) {
-    grade = '9';
-  } else if (totalMarks > 70) {
-    grade = '8';
-  } else if (totalMarks > 60) {
-    grade = '7';
-  } else if (totalMarks > 50) {
-    grade = '6';
-  } 
-  else if (totalMarks > 40) {
-    grade = '5';
-  }
-  else {
-    grade = 'FAIL';
-  }
-  console.log(classTestMarks);
-  console.log(totalMarks);
-  console.log(grade);
-  document.getElementById('result').innerHTML = `<p>Total Marks: ${totalMarks}</p><p>Grade: ${grade}</p>`;
-});
-
-
-
-document.getElementById('gradeForm2').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  // Get input values
-  const classTestMarks = parseFloat(document.getElementById('classTest2').value);
-  const sessionalMarks = parseFloat(document.getElementById('sessional2').value);
-  const assignmentMarks = parseFloat(document.getElementById('assignment2').value);
-  const lpwMarks = parseFloat(document.getElementById('lpw2').value);
-  const practicalMarks = parseFloat(document.getElementById('practical2').value);
-
-  // Calculate total marks
-  var totalMarks = 0;
-  if(isNaN(lpwMarks) && isNaN(practicalMarks))
-  {
-    totalMarks = Math.ceil((0.6 * classTestMarks) + (0.36 * sessionalMarks) + (0.6 * assignmentMarks));
-  }
-  else
-  {
-    totalMarks = Math.ceil((0.3 * classTestMarks) + (0.18 * sessionalMarks) + (0.3 * assignmentMarks)) + Math.ceil((0.3 * lpwMarks) + (0.18 * practicalMarks));
+  .dialog-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
   }
 
-  // Calculate marks required for each grade
-  const grades = [];
-  for (let i = 9; i >= 4; i--) {
-    var marksRequired = ((i * 10) - totalMarks + 1) / 0.4;
-    marksRequired = Math.ceil(marksRequired);
-    if(marksRequired < 40)
-    {
-        marksRequired = 40;
-    }
-    if(marksRequired > 100)
-    {
-        
-    }
-    else
-    {
-        grades.push({ grade: i + 1, marksRequired: marksRequired });
-    }
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 
-  // Display analytics in a table
-  const analyticsTable = document.createElement('table');
-  analyticsTable.classList.add('table', 'table-bordered');
-  analyticsTable.innerHTML = `
-    <thead>
-      <tr>
-        <th>Grade</th>
-        <th>Marks Required in End Semester</th>
-      </tr>
-    </thead>
-    <tbody>
-      ${grades.map(grade => `<tr><td>${grade.grade}</td><td>${grade.marksRequired}</td></tr>`).join('')}
-    </tbody>
-  `;
-  
-  document.getElementById('analytics').innerHTML = '';
-  document.getElementById('analytics').appendChild(analyticsTable);
-});
-
-    </script>
-
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-      import {
-        getDatabase,
-        ref,
-        set,
-        get,
-        child,
-      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyBEJYbdU8cAUTriZG_1kwj7MPAAcziCXtM",
-        authDomain: "darshil-127fd.firebaseapp.com",
-        projectId: "darshil-127fd",
-        storageBucket: "darshil-127fd.appspot.com",
-        messagingSenderId: "217068281988",
-        appId: "1:217068281988:web:3bc3e666cde298cdc9e2d1",
-        measurementId: "G-J793ZWNFLX",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-
-      // Initialize Realtime Database
-      const db = getDatabase();
-
-      // Function to handle form submission
-      document
-        .getElementById("commentForm")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault(); // Prevent default form submission
-
-          // Get user input
-          var name = document.getElementById("name").value;
-          var comment = document.getElementById("comment").value;
-
-          try {
-            // Add comment to Realtime Database
-            await set(ref(db, "comments/" + Date.now()), {
-              name: name,
-              comment: comment,
-            });
-
-            console.log("Comment added successfully");
-
-            // Clear form fields
-            document.getElementById("name").value = "";
-            document.getElementById("comment").value = "";
-
-            // Display comments again after adding new comment
-            displayComments();
-          } catch (error) {
-            console.error("Error adding comment: ", error);
-          }
-        });
-
-      // Function to display comments from Realtime Database
-      async function displayComments() {
-        var commentsList = document.getElementById("commentsList");
-
-        try {
-          // Get comments from Realtime Database
-          const snapshot = await get(child(ref(db), "comments"));
-          if (snapshot.exists()) {
-            commentsList.innerHTML = ""; // Clear existing comments
-            const comments = []; // Array to store comments
-
-            // Iterate through each comment and push it to the comments array
-            snapshot.forEach((childSnapshot) => {
-              comments.push(childSnapshot.val());
-            });
-
-            // Reverse the comments array to display the latest comments first
-            comments.reverse();
-
-            // Iterate through the reversed comments array to create HTML elements
-            comments.forEach((commentData) => {
-              var commentElement = document.createElement("div");
-              commentElement.innerHTML = `<div class="card h-100">
-            <div class="card-body">
-              <p class="card-text">${commentData.comment}</p>
-              <p class="card-text">~ ${commentData.name}</p>
-            </div>
-          </div>`;
-              commentsList.appendChild(commentElement);
-            });
-          } else {
-            console.log("No comments found");
-          }
-        } catch (error) {
-          console.error("Error getting comments: ", error);
-        }
-      }
-
-      // Call function to display comments when the page loads
-      displayComments();
-
-      document.getElementById('gradeCalculatorBtn').addEventListener('click', function() {
-  // Display confirmation dialog box
-  const confirmed = confirm("Are you sure you want to open the Grade Calculator?");
-  
-  // If user confirms, redirect to the Grade Calculator page
-  if (confirmed) {
-    window.location.href = "grade_calculator.html";
+  .dialog-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
   }
-});
 
-    </script>
-    <!-- JavaScript dependencies (jQuery, Popper.js, Bootstrap JS) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    font-size: 1.5em;
+  }
+
+  .dialog-content {
+    color: #666;
+    font-size: 1em;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="dialog-container" id="dialog">
+  <div class="dialog-header">
+    <h2>Website is Transffered</h2>
+    <button class="close-btn" onclick="closeDialog()">×</button>
+  </div>
+  <div class="dialog-content">
+    <p>Go to the Official Site : <a href="https://darshilthakkar.com/">www.darshilthakkar.com</a></p>
+    <button class="btn" onclick="closeDialog()">Close</button>
+  </div>
+</div>
+
+<script>
+  function closeDialog() {
+    var dialog = document.getElementById('dialog');
+    dialog.style.display = 'none';
+  }
+</script>
+
+</body>
 </html>
